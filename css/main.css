@@ -147,7 +147,7 @@ ul {
 }
 
 .menu-close__btn {
-  position: absolute;
+  position: fixed;
   display: block;
   margin-left: auto;
   border: none;
