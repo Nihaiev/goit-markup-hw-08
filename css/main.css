@@ -70,7 +70,7 @@ ul {
 @media screen and (min-width: 1200px) {
   .logo {
     font-size: 26px;
-    line-height: 1.19px;
+    line-height: 1.19;
     margin-right: 93px;
     padding-top: 24px;
     padding-bottom: 24px;
@@ -264,16 +264,9 @@ ul {
 .mob--soc__item {
   display: flex;
 }
-.mob--soc__item:not(:first-child) {
-  margin-left: 10px;
-}
-.mob--soc__item:not(:last-child)::after {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 1px;
-  background-color: rgba(33, 33, 33, 0.2);
-  margin-left: 10px;
+.mob--soc__item:not(:last-child) {
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  margin-right: 10px;
 }
 
 .mob--soc__link {
@@ -282,6 +275,7 @@ ul {
   line-height: 1.22;
   letter-spacing: 0.02em;
   color: var(--main-color);
+  margin-right: 10px;
 }
 
 .navigation {
@@ -348,7 +342,7 @@ ul {
   .current::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     display: block;
     width: 100%;
     height: 4px;
@@ -382,15 +376,14 @@ ul {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .connect__list:not(:last-child) {
     margin-bottom: 8px;
   }
 }
-@media screen and (min-width: 768px) and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .connect__list:not(:last-child) {
     margin-right: 30px;
-    margin-bottom: 0px;
   }
 }
 
@@ -400,14 +393,19 @@ ul {
   line-height: 1.16;
   letter-spacing: 0.02em;
   color: var(--header-contact-color);
-  display: flex;
   transition-property: color, fill;
   transition-duration: var(--typical-time-transition);
   transition-timing-function: var(--typical-cubic-bezier);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1199px) {
   .connect__link {
-    display: block;
+    display: flex;
+  }
+  .connect__list:last-child .connect__link {
+    padding-bottom: 20px;
+  }
+  .connect__list:first-child .connect__link {
+    padding-top: 20px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -809,6 +807,11 @@ ul {
   text-transform: uppercase;
   color: #212121;
   margin-bottom: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .feature__item--title {
+    text-align: left;
+  }
 }
 
 .about {
